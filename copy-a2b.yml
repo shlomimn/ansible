@@ -1,0 +1,14 @@
+---
+- name: general
+  hosts: servers
+  gather_facts: yes
+  become: yes
+  become_user: devops
+
+  tasks:
+  - name: copy files
+    copy:
+      src: /tmp/a.txt
+      dest: /tmp/
+    become: yes
+
